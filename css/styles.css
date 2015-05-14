@@ -1,0 +1,32 @@
+.boxes {
+ 	height: 100px;
+ 	width: 100px;
+ 	border: 1px solid black;
+ 	float: left;
+}
+.clearfix {
+	width: 400px;
+	position: relative;
+	left: 200px;
+	top: 50px;
+}
+.clearfix:before,
+.clearfix:after {
+ 	content: ""; 
+ 	display: table; 
+}
+.clearfix:after {
+ 	clear: both;
+}
+.red {
+	background-color: red;
+}
+.green {
+	background-color: black;
+}
+.blue {
+	background: blue;
+}
+.yellow {
+	background: yellow;
+}
