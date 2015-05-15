@@ -19,7 +19,9 @@
 		<div class="clearfix">
 			<!-- color output for clicking boxes -->
 			<div class="boxes"
-			     ng-class="{red: box.active}"
+			     ng-class="{X: box.status === 'X',
+			     			O: box.status === 'O'}"
+			   
 			     ng-click="tictacCtrl.clickYou($index)"
 			     ng-repeat="box in tictacCtrl.board track by $index">
 			</div>		

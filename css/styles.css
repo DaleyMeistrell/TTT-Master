@@ -18,15 +18,16 @@
 .clearfix:after {
  	clear: both;
 }
-.red {
-	background-color: red;
+
+.X {
+	background-color: blue;
 }
-.green {
-	background-color: black;
+.O {
+	background-color: green;
 }
-.blue {
-	background: blue;
-}
-.yellow {
-	background: yellow;
-}
+
+
+
+/*
+ng-class="{move: box.active}"
+*/
