@@ -13,8 +13,8 @@ angular
         self.scoreEngland = 0;
         // self.changeColor = changeColor();
         self.message = self.getWinner;
-        // self.score1 = self.getWinner;
-        // self.score1 = self.getWinner;
+        self.score1 = self.getWinner;
+        self.score2 = self.getWinner;
         // self.takeTurn = takeTurn();
         //self.clickMe = clickMe;
         self.clickYou = clickYou;
@@ -55,9 +55,11 @@ angular
                     console.log("Player " + self.board[0].status + " wins");
                     self.message = (self.board[0].status + " wins!");
                 if (self.board[0].status == "America"){
-                    console.log(++self.scoreAmerica);
+                    self.scoreAmerica++;
+                    self.score1 = self.scoreAmerica;
                 } else if(self.board[0].status == "England"){
-                    console.log(++self.scoreEngland);
+                    self.scoreEngland++;
+                    self.score2 = self.scoreEngland;
                  }
                }
             if((self.board[3].status == self.board[4].status) && 
@@ -65,10 +67,12 @@ angular
                (self.board[3].status != "null")) {
                     self.message = (self.board[3].status + " wins!");
                     console.log(self.board[3].status + " wins!");
-                if (self.board[0].status == "America"){
-                    console.log(++self.scoreAmerica);
-                } else if(self.board[0].status == "England"){
-                    console.log(++self.scoreEngland);
+                if (self.board[3].status == "America"){
+                    self.scoreAmerica++;
+                    self.score1 = self.scoreAmerica;
+                } else if(self.board[3].status == "England"){
+                    self.scoreEngland++;
+                    self.score2 = self.scoreEngland;
                 }
                 }
             if((self.board[6].status == self.board[7].status) && 
@@ -76,10 +80,12 @@ angular
                (self.board[6].status != "null")) {
                     self.message = (self.board[6].status + " wins!");
                     console.log(self.board[6].status + " wins!");
-                if (self.board[0].status == "America"){
-                    console.log(++self.scoreAmerica);
-                } else if(self.board[0].status == "England"){
-                    console.log(++self.scoreEngland);
+                if (self.board[6].status == "America"){
+                    self.scoreAmerica++;
+                    self.score1 = self.scoreAmerica;
+                } else if(self.board[6].status == "England"){
+                    self.scoreEngland++;
+                    self.score2 = self.scoreEngland;
                 }
                 }
             if((self.board[0].status == self.board[3].status) && 
@@ -88,9 +94,11 @@ angular
                     self.message = (self.board[0].status + " wins!");
                     console.log(self.board[0].status + " wins!");
                 if (self.board[0].status == "America"){
-                    console.log(++self.scoreAmerica);
+                    self.scoreAmerica++;
+                    self.score1 = self.scoreAmerica;
                 } else if(self.board[0].status == "England"){
-                    console.log(++self.scoreEngland);
+                    self.scoreEngland++;
+                    self.score2 = self.scoreEngland;
                 }
                 }
             if((self.board[1].status == self.board[4].status) && 
@@ -98,10 +106,12 @@ angular
                (self.board[1].status != "null")) {
                     self.message = (self.board[1].status + " wins!");
                     console.log(self.board[1].status + " wins!");
-                if (self.board[0].status == "America"){
-                    console.log(++self.scoreAmerica);
-                } else if(self.board[0].status == "England"){
-                    console.log(++self.scoreEngland);
+                if (self.board[1].status == "America"){
+                    self.scoreAmerica++;
+                    self.score1 = self.scoreAmerica;
+                } else if(self.board[1].status == "England"){
+                    self.scoreEngland++;
+                    self.score2 = self.scoreEngland;
                 }
                 }
             if((self.board[2].status == self.board[5].status) && 
@@ -109,10 +119,12 @@ angular
                (self.board[2].status != "null")) {
                     self.message = (self.board[2].status + " wins!");
                     console.log(self.board[2].status + " wins!");
-                if (self.board[0].status == "America"){
-                    console.log(++self.scoreAmerica);
-                } else if(self.board[0].status == "England"){
-                    console.log(++self.scoreEngland);
+                if (self.board[2].status == "America"){
+                    self.scoreAmerica++;
+                    self.score1 = self.scoreAmerica;
+                } else if(self.board[2].status == "England"){
+                    self.scoreEngland++;
+                    self.score2 = self.scoreEngland;
                 }
                 }
             if((self.board[0].status == self.board[4].status) && 
@@ -121,9 +133,11 @@ angular
                     self.message = (self.board[0].status + " wins!");
                     console.log(self.board[0].status + " wins!");
                 if (self.board[0].status == "America"){
-                    console.log(++self.scoreAmerica);
+                    self.scoreAmerica++;
+                    self.score1 = self.scoreAmerica;
                 } else if(self.board[0].status == "England"){
-                    console.log(++self.scoreEngland);
+                    self.scoreEngland++;
+                    self.score2 = self.scoreEngland;
                 }
                 }
             if((self.board[2].status == self.board[4].status) && 
@@ -131,12 +145,15 @@ angular
                (self.board[2].status != "null")) {
                     self.message = (self.board[2].status + " wins!");
                     console.log(self.board[2].status + " wins!");
-                if (self.board[0].status == "America"){
-                    console.log(++self.scoreAmerica);
-                } else if(self.board[0].status == "England"){
-                    console.log(++self.scoreEngland);
+                if (self.board[2].status == "America"){
+                    self.scoreAmerica++;
+                    self.score1 = self.scoreAmerica;
+                } else if(self.board[2].status == "England"){
+                    self.scoreEngland++;
+                    self.score2 = self.scoreEngland;
                 }
                 }
+                // if no one wins AND all squares are equal to null, its a tie game and America gets the victory
              else if ((self.board[0].status != "null") &&
                 (self.board[1].status != "null") &&
                 (self.board[2].status != "null") &&
@@ -146,7 +163,7 @@ angular
                 (self.board[6].status != "null") &&
                 (self.board[7].status != "null") &&
                 (self.board[8].status != "null")){
-                console.log("It's a tie");
+                self.message = "Tie goes to America!";
             }
         }
 

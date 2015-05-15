@@ -18,6 +18,33 @@ body {
 	left: 200px;
 	top: 50px;*/
 }
+.scoreAmerica {
+	width: 50px;
+	height: 50px;
+	border: 1px solid blue;
+	float: left;
+	position: relative;
+	right: 60px;
+
+}
+.scoreEngland {
+	width: 50px;
+	height: 50px;
+	border: 1px solid red;
+	float: left;
+	margin: 0 10px 0 10px;
+	position: relative;
+	left: 350px;
+}
+.scoreboard:before,
+.scoreboard:after {
+	content: ""; 
+ 	display: table; 
+}
+.scoreboard:after {
+	clear: both;
+}
+}
 .clearfix:before,
 .clearfix:after {
  	content: ""; 
@@ -62,3 +89,17 @@ h3 {
 	text-align: center;
 	color: red;
 }
+h4 {
+	text-align: center;
+	color: red;
+}
+.patriots-blue {
+	color: blue;
+}
+.font-black {
+	color: white;
+}
+.redcoat-red {
+	color: red;
+}
+

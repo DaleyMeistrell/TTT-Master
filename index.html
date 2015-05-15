@@ -2,7 +2,7 @@
 <html ng-app="tictacApp">
 	<head>
 		<meta charset="utf-8">
-		<title>Tic Tac Toe</title>
+		<title>Tic Tac</span>Toe</title>
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/styles.css">
 		<script 
@@ -16,19 +16,21 @@
 			<!-- Controller in Body -->
 	<body ng-controller="TictacController as tictacCtrl">
 			<!-- clear fix for gameboard -->
-		<h1 class="fancy">Tic Tac Revolution</h1>
-		<h3>Patriots vs Redcoats</h3>
+		<h1 class="fancy">Tic<span class="font-black">Tac</span><span class="redcoat-red"> Revolution</span></h1>
+		<h3><span class="patriots-blue">Patriots</span> <span class="font-black">vs</span> Redcoats</h3>
 
 		<div class="clearfix">
 			<div class="message">
 				<h2>{{ tictacCtrl.message }}</h2>
 			</div>
-				<!-- <div class="scoreAmerica">
-					<h3> {{ tictacCtrl.scoreAmerica }}</h3>
-				</div>  -->
-			<!-- <div class="scoreAmerica">
-				<h3> {{ tictacCtrl.scoreEngland }}</h3>
-			</div>  -->
+			<div class="scoreboard">
+					<div class="scoreAmerica">
+						<h4> {{ tictacCtrl.score1 }}</h3>
+					</div> 
+					<div class="scoreEngland">
+						<h4> {{ tictacCtrl.score2 }}</h3>
+					</div> 
+			</div>
 		<div class="reset-button" ng-click="tictacCtrl.clearBoard($index)"><p>Clear Board</p></div>
 			<!-- color output for clicking boxes -->
 			<div class="boxes"
