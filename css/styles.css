@@ -39,3 +39,15 @@ p {
 	text-align: center;
 	padding: 15px 0 0 0;
 }
+.message {
+	text-align: center;
+	margin: 10px;
+}
+
+h1 {
+	text-align: center;
+	color: blue;
+}
+h2 {
+	color: red;
+}

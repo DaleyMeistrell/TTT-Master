@@ -96,7 +96,7 @@ angular
          }
 
          function clearBoard($index){
-            (self.board[0].status == "null");
+            (self.board[0].status == "");
             (self.board[1].status == "null");
             (self.board[2].status == "null");
             (self.board[3].status == "null");

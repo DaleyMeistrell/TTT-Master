@@ -16,8 +16,12 @@
 			<!-- Controller in Body -->
 	<body ng-controller="TictacController as tictacCtrl">
 			<!-- clear fix for gameboard -->
+		<h1 class="fancy">Tic Tac Revolution</h1>
+
 		<div class="clearfix">
-		{{ tictacCtrl.message }}
+			<div class="message">
+				<h2>{{ tictacCtrl.message }}</h2>
+			</div>
 		<div class="reset-button" ng-click="tictacCtrl.clearBoard($index)"><p>Clear Board</p></div>
 			<!-- color output for clicking boxes -->
 			<div class="boxes"
