@@ -48,7 +48,7 @@ angular
          }
 
          // tic tac toe logic that 
-         function getWinner(){
+        function getWinner(){
             if((self.board[0].status == self.board[1].status) && 
                (self.board[1].status == self.board[2].status) && 
                (self.board[0].status != "null")) {
@@ -137,7 +137,19 @@ angular
                     console.log(++self.scoreEngland);
                 }
                 }
+             else if ((self.board[0].status != "null") &&
+                (self.board[1].status != "null") &&
+                (self.board[2].status != "null") &&
+                (self.board[3].status != "null") &&
+                (self.board[4].status != "null") &&
+                (self.board[5].status != "null") &&
+                (self.board[6].status != "null") &&
+                (self.board[7].status != "null") &&
+                (self.board[8].status != "null")){
+                console.log("It's a tie");
+            }
         }
+
 
 
          // clears the status/ flags from the game board
