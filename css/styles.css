@@ -22,10 +22,12 @@
 }
 
 .X {
-	background-color: blue;
+	background-image: url("../images/usa-flag.png");
+	/*background-color: blue;*/
 }
 .O {
-	background-color: green;
+	background-image: url("../images/england.png");
+	/*background-color: green;*/
 }
 .reset-button {
 	background-color: #999;
@@ -37,9 +39,3 @@ p {
 	text-align: center;
 	padding: 15px 0 0 0;
 }
-
-
-
-/*
-ng-class="{move: box.active}"
-*/

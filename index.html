@@ -21,8 +21,8 @@
 		<div class="reset-button" ng-click="tictacCtrl.clearBoard($index)"><p>Clear Board</p></div>
 			<!-- color output for clicking boxes -->
 			<div class="boxes"
-			     ng-class="{X: box.status === 'X',
-			     			O: box.status === 'O'}"
+			     ng-class="{X: box.status === 'America',
+			     			O: box.status === 'England'}"
 			   
 			     ng-click="tictacCtrl.clickYou($index)"
 			     ng-repeat="box in tictacCtrl.board track by $index">
