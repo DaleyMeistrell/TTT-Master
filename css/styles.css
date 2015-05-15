@@ -1,12 +1,15 @@
+body {
+	background-image: url("../images/rev1.jpg");
+}
 .boxes {
  	height: 130px;
- 	width: 131px;
- 	border: 1px solid black;
+ 	width: 130px;
+ 	border: 1px groove red;
  	float: left;
 
 }
 .clearfix {
-	width: 400px;
+	width: 420px;
 	margin: 0 auto;
 	/*position: relative;
 	left: 200px;
@@ -22,11 +25,11 @@
 }
 
 .X {
-	background-image: url("../images/usa-flag.png");
+	background-image: url("../images/flag1.png");
 	/*background-color: blue;*/
 }
 .O {
-	background-image: url("../images/england.png");
+	background-image: url("../images/flag2.png");
 	/*background-color: green;*/
 }
 .reset-button {
@@ -49,5 +52,9 @@ h1 {
 	color: blue;
 }
 h2 {
+	color: red;
+}
+h3 {
+	text-align: center;
 	color: red;
 }

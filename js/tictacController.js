@@ -9,8 +9,12 @@ angular
     function TictacController($firebaseObject, $index){
         var self = this;
         var counter = 1;
+        var scoreAmerica = 0;
+        var scoreEngland = 0;
         // self.changeColor = changeColor();
         self.message = self.getWinner;
+        // self.score1 = self.getWinner;
+        // self.score2 = self.getWinner;
         // self.takeTurn = takeTurn();
         //self.clickMe = clickMe;
         self.clickYou = clickYou;
@@ -50,6 +54,12 @@ angular
                (self.board[0].status != "null")) {
                     console.log("Player " + self.board[0].status + " wins");
                     self.message = (self.board[0].status + " wins!");
+                // if (self.board[0].status == "America"){
+                //     self.score1 = (scoreAmerica++);
+                // } else if(self.board[0].status == "England"){
+                //     self.score2 = (scoreEngland++);
+
+    
                }
             if((self.board[3].status == self.board[4].status) && 
                (self.board[4].status == self.board[5].status) && 
@@ -95,14 +105,17 @@ angular
                }
          }
 
+         // clears the status/ flags from the game board
          function clearBoard($index){
-            (self.board[0].status == "");
-            (self.board[1].status == "null");
-            (self.board[2].status == "null");
-            (self.board[3].status == "null");
-            (self.board[4].status == "null");
-            (self.board[5].status == "null");
-
+            self.board["0"].status = "null";
+            self.board["1"].status = "null";
+            self.board["2"].status = "null";
+            self.board["3"].status = "null";
+            self.board["4"].status = "null";
+            self.board["5"].status = "null";
+            self.board["6"].status = "null";
+            self.board["7"].status = "null";
+            self.board["8"].status = "null";
          }
 
     }
