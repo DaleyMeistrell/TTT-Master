@@ -13,12 +13,13 @@ angular
         self.scoreEngland = 0;
         // self.changeColor = changeColor();
         self.message = self.getWinner;
-        self.score1 = self.getWinner;
-        self.score2 = self.getWinner;
+        self.score1 = getWinner;
+        self.score2 = getWinner;
         // self.takeTurn = takeTurn();
         //self.clickMe = clickMe;
         self.clickYou = clickYou;
         self.clearBoard = clearBoard;
+        self.clearGame = clearGame;
         self.board = [{active: false, status: "null"},{active: false, status: "null"},{active: false, status: "null"},
         {active: false, status: "null"},{active: false, status: "null"},{active: false, status: "null"},{active: false, status: "null"},
         {active: false, status: "null"},{active: false, status: "null"}];
@@ -164,13 +165,41 @@ angular
                 (self.board[7].status != "null") &&
                 (self.board[8].status != "null")){
                 self.message = "Tie goes to America!";
+                self.scoreAmerica++;
+                self.score1 = self.scoreAmerica;
             }
+            if (self.scoreAmerica >= 2) {
+                self.message = "Game Over, America Wins! :)";
+                // ((self.score1 = "") && (self.score2 = ""));
+            }
+            else if(self.scoreEngland >= 2) {
+                self.message = "Game Over, England Wins :(";
+                // ((self.score1 = "") && (self.score2 = ""));
+            }
+        }
+
+        function clearGame() {
+            self.board["0"].status = "null";
+            self.board["1"].status = "null";
+            self.board["2"].status = "null";
+            self.board["3"].status = "null";
+            self.board["4"].status = "null";
+            self.board["5"].status = "null";
+            self.board["6"].status = "null";
+            self.board["7"].status = "null";
+            self.board["8"].status = "null";
+            self.score1 = "";
+            self.scoreAmerica = 0;
+            self.score2 = "";
+            self.scoreEngland = 0;
+            self.message = "";
+            console.log(self.board);
         }
 
 
 
          // clears the status/ flags from the game board
-         function clearBoard($index){
+         function clearBoard(){
             self.board["0"].status = "null";
             self.board["1"].status = "null";
             self.board["2"].status = "null";

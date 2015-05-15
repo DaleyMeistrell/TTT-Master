@@ -16,7 +16,7 @@
 			<!-- Controller in Body -->
 	<body ng-controller="TictacController as tictacCtrl">
 			<!-- clear fix for gameboard -->
-		<h1 class="fancy">Tic<span class="font-black">Tac</span><span class="redcoat-red"> Revolution</span></h1>
+		<h1 class="fancy">Tic<span class="font-black"> Tac</span><span class="redcoat-red"> Revolution</span></h1>
 		<h3><span class="patriots-blue">Patriots</span> <span class="font-black">vs</span> Redcoats</h3>
 
 		<div class="clearfix">
@@ -31,7 +31,11 @@
 						<h4> {{ tictacCtrl.score2 }}</h3>
 					</div> 
 			</div>
-		<div class="reset-button" ng-click="tictacCtrl.clearBoard($index)"><p>Clear Board</p></div>
+			<div class="reset-buttons">
+				<div class="reset-button" ng-click="tictacCtrl.clearBoard()"><p>
+				Clear Board</p></div>
+				<div class="reset-game" ng-click="tictacCtrl.clearGame()"><p>Clear Game</p></div>
+			</div>
 			<!-- color output for clicking boxes -->
 			<div class="boxes"
 			     ng-class="{X: box.status === 'America',
