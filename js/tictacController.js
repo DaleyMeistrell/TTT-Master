@@ -10,26 +10,15 @@ angular
         var self = this;
         var counter = 1;
         self.changeColor = changeColor();
+        self.message = self.getWinner;
         // self.takeTurn = takeTurn();
         //self.clickMe = clickMe;
         self.clickYou = clickYou;
+        self.clearBoard = clearBoard;
         self.board = [{active: false, status: "null"},{active: false, status: "null"},{active: false, status: "null"},
         {active: false, status: "null"},{active: false, status: "null"},{active: false, status: "null"},{active: false, status: "null"},
         {active: false, status: "null"},{active: false, status: "null"}];
-
-
-        //alternates player move with modular if else statement. The return output detrmines which symbol will be outputted
-        // function takeTurn() {
-        //     var counter = 1;
-        //     if (counter % 2 == 0) {
-                
-        //         self.board[$index].status = "X"
-        //         // console.log(self.board[$index])
-        //     } else {
-        //         return "O"
-        //         // self.board[$index].status = "O"
-        //     }
-        // }
+        
 
         function changeColor(){
           // counter++;
@@ -39,63 +28,71 @@ angular
           return changeColor
         }
 
-
+        //alternates player move with a modular if/else statement. 
+        // self.board[$index].status output an X or O, blue or green.
         function clickYou($index){
             counter++;
             if(counter % 2 == 0){
                 self.board[$index].status = "X";
             } else {
-
-            self.board[$index].status = "O";
-        }
-            // self.board.$save();
-            console.log(self.board[$index].active);
+                self.board[$index].status = "O";
+            }
             console.log(self.board);
             getWinner();
          }
 
+         // tic tac toe logic that 
          function getWinner(){
-            console.log("get winner working");
             if((self.board[0].status == self.board[1].status) && 
                (self.board[1].status == self.board[2].status) && 
                (self.board[0].status != "null")) {
-                console.log("You win");
+                    console.log("Player " + self.board[0].status + " wins");
+                    self.message = ("Player " + self.board[0].status + " wins");
                }
             if((self.board[3].status == self.board[4].status) && 
                (self.board[4].status == self.board[5].status) && 
                (self.board[3].status != "null")) {
-                console.log("You win");
+                    console.log("Player " + self.board[3].status + " wins");
                }
             if((self.board[6].status == self.board[7].status) && 
                (self.board[7].status == self.board[8].status) && 
                (self.board[6].status != "null")) {
-                console.log("You win");
+                    console.log("Player " + self.board[6].status + " wins");
                }
             if((self.board[0].status == self.board[3].status) && 
                (self.board[3].status == self.board[6].status) && 
                (self.board[0].status != "null")) {
-                console.log("You win");
+                    console.log("Player " + self.board[0].status + " wins");
                }
             if((self.board[1].status == self.board[4].status) && 
                (self.board[4].status == self.board[7].status) && 
                (self.board[1].status != "null")) {
-                console.log("You win");
+                    console.log("Player " + self.board[1].status + " wins");
                }
             if((self.board[2].status == self.board[5].status) && 
                (self.board[5].status == self.board[8].status) && 
                (self.board[2].status != "null")) {
-                console.log("You win");
+                    console.log("Player " + self.board[2].status + " wins");
                }
             if((self.board[0].status == self.board[4].status) && 
                (self.board[4].status == self.board[8].status) && 
                (self.board[0].status != "null")) {
-                console.log("You win");
+                    console.log("Player " + self.board[0].status + " wins");
                }
             if((self.board[2].status == self.board[4].status) && 
                (self.board[4].status == self.board[6].status) && 
                (self.board[2].status != "null")) {
-                console.log("You win");
+                    console.log("Player " + self.board[2].status + " wins");
                }
+         }
+
+         function clearBoard($index){
+            (self.board[0].status == "null");
+            (self.board[1].status == "null");
+            (self.board[2].status == "null");
+            (self.board[3].status == "null");
+            (self.board[4].status == "null");
+            (self.board[5].status == "null");
 
          }
 

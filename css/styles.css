@@ -1,14 +1,16 @@
 .boxes {
- 	height: 100px;
- 	width: 100px;
+ 	height: 130px;
+ 	width: 131px;
  	border: 1px solid black;
  	float: left;
+
 }
 .clearfix {
 	width: 400px;
-	position: relative;
+	margin: 0 auto;
+	/*position: relative;
 	left: 200px;
-	top: 50px;
+	top: 50px;*/
 }
 .clearfix:before,
 .clearfix:after {
@@ -24,6 +26,16 @@
 }
 .O {
 	background-color: green;
+}
+.reset-button {
+	background-color: #999;
+	width: 100px;
+	height: 50px;
+	margin: 20px auto;
+}
+p {
+	text-align: center;
+	padding: 15px 0 0 0;
 }
 
 
