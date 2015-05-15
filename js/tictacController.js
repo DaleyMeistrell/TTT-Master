@@ -9,12 +9,12 @@ angular
     function TictacController($firebaseObject, $index){
         var self = this;
         var counter = 1;
-        var scoreAmerica = 0;
-        var scoreEngland = 0;
+        self.scoreAmerica = 0;
+        self.scoreEngland = 0;
         // self.changeColor = changeColor();
         self.message = self.getWinner;
         // self.score1 = self.getWinner;
-        // self.score2 = self.getWinner;
+        // self.score1 = self.getWinner;
         // self.takeTurn = takeTurn();
         //self.clickMe = clickMe;
         self.clickYou = clickYou;
@@ -54,56 +54,91 @@ angular
                (self.board[0].status != "null")) {
                     console.log("Player " + self.board[0].status + " wins");
                     self.message = (self.board[0].status + " wins!");
-                // if (self.board[0].status == "America"){
-                //     self.score1 = (scoreAmerica++);
-                // } else if(self.board[0].status == "England"){
-                //     self.score2 = (scoreEngland++);
-
-    
+                if (self.board[0].status == "America"){
+                    console.log(++self.scoreAmerica);
+                } else if(self.board[0].status == "England"){
+                    console.log(++self.scoreEngland);
+                 }
                }
             if((self.board[3].status == self.board[4].status) && 
                (self.board[4].status == self.board[5].status) && 
                (self.board[3].status != "null")) {
                     self.message = (self.board[3].status + " wins!");
                     console.log(self.board[3].status + " wins!");
-               }
+                if (self.board[0].status == "America"){
+                    console.log(++self.scoreAmerica);
+                } else if(self.board[0].status == "England"){
+                    console.log(++self.scoreEngland);
+                }
+                }
             if((self.board[6].status == self.board[7].status) && 
                (self.board[7].status == self.board[8].status) && 
                (self.board[6].status != "null")) {
                     self.message = (self.board[6].status + " wins!");
                     console.log(self.board[6].status + " wins!");
-               }
+                if (self.board[0].status == "America"){
+                    console.log(++self.scoreAmerica);
+                } else if(self.board[0].status == "England"){
+                    console.log(++self.scoreEngland);
+                }
+                }
             if((self.board[0].status == self.board[3].status) && 
                (self.board[3].status == self.board[6].status) && 
                (self.board[0].status != "null")) {
                     self.message = (self.board[0].status + " wins!");
                     console.log(self.board[0].status + " wins!");
-               }
+                if (self.board[0].status == "America"){
+                    console.log(++self.scoreAmerica);
+                } else if(self.board[0].status == "England"){
+                    console.log(++self.scoreEngland);
+                }
+                }
             if((self.board[1].status == self.board[4].status) && 
                (self.board[4].status == self.board[7].status) && 
                (self.board[1].status != "null")) {
                     self.message = (self.board[1].status + " wins!");
                     console.log(self.board[1].status + " wins!");
-               }
+                if (self.board[0].status == "America"){
+                    console.log(++self.scoreAmerica);
+                } else if(self.board[0].status == "England"){
+                    console.log(++self.scoreEngland);
+                }
+                }
             if((self.board[2].status == self.board[5].status) && 
                (self.board[5].status == self.board[8].status) && 
                (self.board[2].status != "null")) {
                     self.message = (self.board[2].status + " wins!");
                     console.log(self.board[2].status + " wins!");
-               }
+                if (self.board[0].status == "America"){
+                    console.log(++self.scoreAmerica);
+                } else if(self.board[0].status == "England"){
+                    console.log(++self.scoreEngland);
+                }
+                }
             if((self.board[0].status == self.board[4].status) && 
                (self.board[4].status == self.board[8].status) && 
                (self.board[0].status != "null")) {
                     self.message = (self.board[0].status + " wins!");
                     console.log(self.board[0].status + " wins!");
-               }
+                if (self.board[0].status == "America"){
+                    console.log(++self.scoreAmerica);
+                } else if(self.board[0].status == "England"){
+                    console.log(++self.scoreEngland);
+                }
+                }
             if((self.board[2].status == self.board[4].status) && 
                (self.board[4].status == self.board[6].status) && 
                (self.board[2].status != "null")) {
                     self.message = (self.board[2].status + " wins!");
                     console.log(self.board[2].status + " wins!");
-               }
-         }
+                if (self.board[0].status == "America"){
+                    console.log(++self.scoreAmerica);
+                } else if(self.board[0].status == "England"){
+                    console.log(++self.scoreEngland);
+                }
+                }
+        }
+
 
          // clears the status/ flags from the game board
          function clearBoard($index){
@@ -116,6 +151,7 @@ angular
             self.board["6"].status = "null";
             self.board["7"].status = "null";
             self.board["8"].status = "null";
+            self.message = "";
          }
 
     }

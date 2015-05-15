@@ -6,8 +6,11 @@ body {
  	width: 130px;
  	border: 1px groove red;
  	float: left;
-
 }
+/*.boxes:hover {
+	background-image: url("../images/george.jpg");
+	opacity: .2;
+}*/
 .clearfix {
 	width: 420px;
 	margin: 0 auto;
@@ -33,14 +36,15 @@ body {
 	/*background-color: green;*/
 }
 .reset-button {
-	background-color: #999;
+	background-color: #528dc4;
 	width: 100px;
-	height: 50px;
-	margin: 20px auto;
+	height: 40px;
+	margin: 15px auto;
+	color: red;
 }
 p {
 	text-align: center;
-	padding: 15px 0 0 0;
+	padding: 10px 0 0 0;
 }
 .message {
 	text-align: center;
