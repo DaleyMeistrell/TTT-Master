@@ -61,7 +61,7 @@ angular
 
                  }
                }
-            if((self.getBoard[3].status == self.getBoard[4].status) && 
+            else if((self.getBoard[3].status == self.getBoard[4].status) && 
                (self.getBoard[4].status == self.getBoard[5].status) && 
                (self.getBoard[3].status != "null")) {
                     console.log("Player " + self.getBoard[3].status + " wins");
@@ -76,7 +76,7 @@ angular
 
                  }
                }
-            if((self.getBoard[6].status == self.getBoard[7].status) && 
+            else if((self.getBoard[6].status == self.getBoard[7].status) && 
                (self.getBoard[7].status == self.getBoard[8].status) && 
                (self.getBoard[6].status != "null")) {
                     console.log("Player " + self.getBoard[6].status + " wins");
@@ -91,7 +91,7 @@ angular
 
                  }
                }
-            if((self.getBoard[0].status == self.getBoard[3].status) && 
+            else if((self.getBoard[0].status == self.getBoard[3].status) && 
                (self.getBoard[3].status == self.getBoard[6].status) && 
                (self.getBoard[0].status != "null")) {
                     console.log("Player " + self.getBoard[0].status + " wins");
@@ -106,7 +106,7 @@ angular
 
                  }
                }
-            if((self.getBoard[1].status == self.getBoard[4].status) && 
+            else if((self.getBoard[1].status == self.getBoard[4].status) && 
                (self.getBoard[4].status == self.getBoard[7].status) && 
                (self.getBoard[1].status != "null")) {
                     console.log("Player " + self.getBoard[1].status + " wins");
@@ -120,7 +120,7 @@ angular
                     self.getTable.$save(self.getTable[0]);
                  }
                }
-            if((self.getBoard[2].status == self.getBoard[5].status) && 
+            else if((self.getBoard[2].status == self.getBoard[5].status) && 
                (self.getBoard[5].status == self.getBoard[8].status) && 
                (self.getBoard[2].status != "null")) {
                     console.log("Player " + self.getBoard[2].status + " wins");
@@ -134,7 +134,7 @@ angular
                     self.getTable.$save(self.getTable[0]);
                  }
                }
-            if((self.getBoard[0].status == self.getBoard[4].status) && 
+            else if((self.getBoard[0].status == self.getBoard[4].status) && 
                (self.getBoard[4].status == self.getBoard[8].status) && 
                (self.getBoard[0].status != "null")) {
                     console.log("Player " + self.getBoard[0].status + " wins");
@@ -148,7 +148,7 @@ angular
                     self.getTable.$save(self.getTable[0]);
                  }
                }
-            if((self.getBoard[2].status == self.getBoard[4].status) && 
+            else if((self.getBoard[2].status == self.getBoard[4].status) && 
                (self.getBoard[4].status == self.getBoard[6].status) && 
                (self.getBoard[2].status != "null")) {
                     console.log("Player " + self.getBoard[2].status + " wins");
@@ -162,8 +162,36 @@ angular
                     self.getTable.$save(self.getTable[0]);
                  }
                }
-        }
+               else if((self.getBoard[0].status != "null") &&
+                (self.getBoard[1].status != "null") &&
+                (self.getBoard[2].status != "null") &&
+                (self.getBoard[3].status != "null") &&
+                (self.getBoard[4].status != "null") &&
+                (self.getBoard[5].status != "null") &&
+                (self.getBoard[6].status != "null") &&
+                (self.getBoard[7].status != "null") &&
+                (self.getBoard[8].status != "null")){
+                self.getTable[0].message = "Tie goes to America!";
+                self.getTable[0].scoreAmerica++;
+                self.getTable.$save(self.getTable[0]);
+                self.getBoard.$save(i);
+            }
+            if (self.scoreAmerica >= 2) {
+                self.message = "Game Over, America Wins! :)";
+                // ((self.score1 = "") && (self.score2 = ""));
+            }
+            else if(self.scoreEngland >= 2) {
+                self.message = "Game Over, England Wins :(";
+                // ((self.score1 = "") && (self.score2 = ""));
+            }
 
+
+
+            for(i = 0; i < 9; i++){
+                self.getBoard[i].status != "null"
+            }
+        }
+        // clear all icons form the gameboard
         function clearBoard() {
             for (i = 0; i < 9; i++){
                 self.getBoard[i].status = "null";
@@ -172,7 +200,7 @@ angular
                 self.getTable.$save(self.getTable[0]);
             }    
         }
-
+        // clear all content from the gameboard, scoreboard, and message area
         function clearGame() {
             for(i = 0; i < 9; i++){
                 self.getBoard[i].status = "null";
