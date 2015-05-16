@@ -54,23 +54,123 @@ angular
                 self.getTable.$save(self.getTable[0]);    
                 if (self.getBoard[0].status == "America"){
                     self.getTable[0].scoreAmerica++;
-                    // self.score1 = self.scoreAmerica;
                     self.getTable.$save(self.getTable[0]);
                 } else if(self.getBoard[0].status == "England"){
                     self.getTable[0].scoreEngland++;
-                    // self.score2 = self.scoreEngland;
                     self.getTable.$save(self.getTable[0]);
 
                  }
                }
+            if((self.getBoard[3].status == self.getBoard[4].status) && 
+               (self.getBoard[4].status == self.getBoard[5].status) && 
+               (self.getBoard[3].status != "null")) {
+                    console.log("Player " + self.getBoard[3].status + " wins");
+                    self.getTable[0].message = (self.getBoard[3].status + " wins!");
+                self.getTable.$save(self.getTable[0]);    
+                if (self.getBoard[3].status == "America"){
+                    self.getTable[0].scoreAmerica++;
+                    self.getTable.$save(self.getTable[0]);
+                } else if(self.getBoard[3].status == "England"){
+                    self.getTable[0].scoreEngland++;
+                    self.getTable.$save(self.getTable[0]);
 
+                 }
+               }
+            if((self.getBoard[6].status == self.getBoard[7].status) && 
+               (self.getBoard[7].status == self.getBoard[8].status) && 
+               (self.getBoard[6].status != "null")) {
+                    console.log("Player " + self.getBoard[6].status + " wins");
+                    self.getTable[0].message = (self.getBoard[6].status + " wins!");
+                self.getTable.$save(self.getTable[0]);    
+                if (self.getBoard[6].status == "America"){
+                    self.getTable[0].scoreAmerica++;
+                    self.getTable.$save(self.getTable[0]);
+                } else if(self.getBoard[6].status == "England"){
+                    self.getTable[0].scoreEngland++;
+                    self.getTable.$save(self.getTable[0]);
 
+                 }
+               }
+            if((self.getBoard[0].status == self.getBoard[3].status) && 
+               (self.getBoard[3].status == self.getBoard[6].status) && 
+               (self.getBoard[0].status != "null")) {
+                    console.log("Player " + self.getBoard[0].status + " wins");
+                    self.getTable[0].message = (self.getBoard[0].status + " wins!");
+                self.getTable.$save(self.getTable[0]);    
+                if (self.getBoard[0].status == "America"){
+                    self.getTable[0].scoreAmerica++;
+                    self.getTable.$save(self.getTable[0]);
+                } else if(self.getBoard[0].status == "England"){
+                    self.getTable[0].scoreEngland++;
+                    self.getTable.$save(self.getTable[0]);
+
+                 }
+               }
+            if((self.getBoard[1].status == self.getBoard[4].status) && 
+               (self.getBoard[4].status == self.getBoard[7].status) && 
+               (self.getBoard[1].status != "null")) {
+                    console.log("Player " + self.getBoard[1].status + " wins");
+                    self.getTable[0].message = (self.getBoard[1].status + " wins!");
+                self.getTable.$save(self.getTable[0]);    
+                if (self.getBoard[1].status == "America"){
+                    self.getTable[0].scoreAmerica++;
+                    self.getTable.$save(self.getTable[0]);
+                } else if(self.getBoard[1].status == "England"){
+                    self.getTable[0].scoreEngland++;
+                    self.getTable.$save(self.getTable[0]);
+                 }
+               }
+            if((self.getBoard[2].status == self.getBoard[5].status) && 
+               (self.getBoard[5].status == self.getBoard[8].status) && 
+               (self.getBoard[2].status != "null")) {
+                    console.log("Player " + self.getBoard[2].status + " wins");
+                    self.getTable[0].message = (self.getBoard[2].status + " wins!");
+                self.getTable.$save(self.getTable[0]);    
+                if (self.getBoard[2].status == "America"){
+                    self.getTable[0].scoreAmerica++;
+                    self.getTable.$save(self.getTable[0]);
+                } else if(self.getBoard[2].status == "England"){
+                    self.getTable[0].scoreEngland++;
+                    self.getTable.$save(self.getTable[0]);
+                 }
+               }
+            if((self.getBoard[0].status == self.getBoard[4].status) && 
+               (self.getBoard[4].status == self.getBoard[8].status) && 
+               (self.getBoard[0].status != "null")) {
+                    console.log("Player " + self.getBoard[0].status + " wins");
+                    self.getTable[0].message = (self.getBoard[0].status + " wins!");
+                self.getTable.$save(self.getTable[0]);    
+                if (self.getBoard[0].status == "America"){
+                    self.getTable[0].scoreAmerica++;
+                    self.getTable.$save(self.getTable[0]);
+                } else if(self.getBoard[0].status == "England"){
+                    self.getTable[0].scoreEngland++;
+                    self.getTable.$save(self.getTable[0]);
+                 }
+               }
+            if((self.getBoard[2].status == self.getBoard[4].status) && 
+               (self.getBoard[4].status == self.getBoard[6].status) && 
+               (self.getBoard[2].status != "null")) {
+                    console.log("Player " + self.getBoard[2].status + " wins");
+                    self.getTable[0].message = (self.getBoard[2].status + " wins!");
+                self.getTable.$save(self.getTable[0]);    
+                if (self.getBoard[2].status == "America"){
+                    self.getTable[0].scoreAmerica++;
+                    self.getTable.$save(self.getTable[0]);
+                } else if(self.getBoard[2].status == "England"){
+                    self.getTable[0].scoreEngland++;
+                    self.getTable.$save(self.getTable[0]);
+                 }
+               }
         }
 
         function clearBoard() {
-            for (i = 0; i < 9; i++)
+            for (i = 0; i < 9; i++){
                 self.getBoard[i].status = "null";
                 self.getBoard.$save(i);
+                self.getTable[0].message = "";
+                self.getTable.$save(self.getTable[0]);
+            }    
         }
 
         function clearGame() {
