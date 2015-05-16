@@ -176,12 +176,12 @@ angular
                 self.getTable.$save(self.getTable[0]);
                 self.getBoard.$save(i);
             }
-            if (self.getTable[0].scoreAmerica >= 2) {
+            if (self.getTable[0].scoreAmerica >= 5) {
                 self.getTable[0].message = "Game Over, America Wins! :)";
                 self.getTable.$save(self.getTable[0]);
                 // ((self.score1 = "") && (self.score2 = ""));
             }
-            else if(self.getTable[0].scoreEngland >= 2) {
+            else if(self.getTable[0].scoreEngland >= 5) {
                 self.getTable[0].message = "Game Over, England Wins :(";
                     self.getTable.$save(self.getTable[0]);
                 // ((self.score1 = "") && (self.score2 = ""));
