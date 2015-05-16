@@ -13,9 +13,8 @@ angular
         self.clickYou = clickYou;
         self.clearGame = clearGame;
         self.clearBoard = clearBoard;
-        self.message = self.getWinner;
-        // self.getTable[0].scoreAmerica = 0;
-        // self.getTable[0].scoreEngland = 0;
+        self.getWinner = getWinner;
+        
 
         function getBoard(){
             var ref = new Firebase("https://daleytictactoe.firebaseio.com/Board")
@@ -44,6 +43,27 @@ angular
                 self.getBoard.$save(i);
                 self.getTable.$save(self.getTable[0]);
             }
+            getWinner();
+        }
+        function getWinner(){
+            if((self.getBoard[0].status == self.getBoard[1].status) && 
+               (self.getBoard[1].status == self.getBoard[2].status) && 
+               (self.getBoard[0].status != "null")) {
+                    console.log("Player " + self.getBoard[0].status + " wins");
+                    self.getTable[0].message = (self.getBoard[0].status + " wins!");
+                self.getTable.$save(self.getTable[0]);    
+                if (self.getBoard[0].status == "America"){
+                    self.getTable[0].scoreAmerica++;
+                    // self.score1 = self.scoreAmerica;
+                    self.getTable.$save(self.getTable[0]);
+                } else if(self.getBoard[0].status == "England"){
+                    self.getTable[0].scoreEngland++;
+                    // self.score2 = self.scoreEngland;
+                    self.getTable.$save(self.getTable[0]);
+
+                 }
+               }
+
 
         }
 
@@ -57,6 +77,13 @@ angular
             for(i = 0; i < 9; i++){
                 self.getBoard[i].status = "null";
                 self.getBoard.$save(i);
+                self.getTable[0].counter = 0;
+                self.getTable[0].message = "";
+                self.getTable[0].scoreAmerica = 0;
+                self.getTable[0].scoreEngland = 0;
+                self.getTable[0].score1 = "";
+                self.getTable[0].score2 = "";
+                self.getTable.$save(self.getTable[0]);
                 console.log(self.getBoard);
             }
         }
