@@ -32,14 +32,14 @@ angular
             self.getTable[0].counter++
             if (self.getTable[0].counter%2 ==0){
                 console.log("second if is running")
-                self.getBoard[i].status="America";
-                self.getBoard[i].status=="X"
+                self.getBoard[i].status="England";
+                self.getBoard[i].status=="O"
                 self.getBoard.$save(i);
                 self.getTable.$save(self.getTable[0]);
             } else {
                 console.log("first if is running")
-                self.getBoard[i].status="England";
-                self.getBoard[i].status=="O"
+                self.getBoard[i].status="America";
+                self.getBoard[i].status=="X"
                 self.getBoard.$save(i);
                 self.getTable.$save(self.getTable[0]);
             }
@@ -176,19 +176,15 @@ angular
                 self.getTable.$save(self.getTable[0]);
                 self.getBoard.$save(i);
             }
-            if (self.scoreAmerica >= 2) {
-                self.message = "Game Over, America Wins! :)";
+            if (self.getTable[0].scoreAmerica >= 2) {
+                self.getTable[0].message = "Game Over, America Wins! :)";
+                self.getTable.$save(self.getTable[0]);
                 // ((self.score1 = "") && (self.score2 = ""));
             }
-            else if(self.scoreEngland >= 2) {
-                self.message = "Game Over, England Wins :(";
+            else if(self.getTable[0].scoreEngland >= 2) {
+                self.getTable[0].message = "Game Over, England Wins :(";
+                    self.getTable.$save(self.getTable[0]);
                 // ((self.score1 = "") && (self.score2 = ""));
-            }
-
-
-
-            for(i = 0; i < 9; i++){
-                self.getBoard[i].status != "null"
             }
         }
         // clear all icons form the gameboard
