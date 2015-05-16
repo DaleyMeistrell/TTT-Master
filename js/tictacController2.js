@@ -11,6 +11,11 @@ angular
         self.getBoard = getBoard();
         self.getTable = getTable();
         self.clickYou = clickYou;
+        self.clearGame = clearGame;
+        self.clearBoard = clearBoard;
+        self.message = self.getWinner;
+        // self.getTable[0].scoreAmerica = 0;
+        // self.getTable[0].scoreEngland = 0;
 
         function getBoard(){
             var ref = new Firebase("https://daleytictactoe.firebaseio.com/Board")
@@ -22,7 +27,8 @@ angular
             var table = $firebaseArray(ref);
             return table;
         }
-
+        //alternates player move with a modular if/else statement. 
+        // self.board[$index].status output an X or O, blue or green.
         function clickYou(i){
             self.getTable[0].counter++
             if (self.getTable[0].counter%2 ==0){
@@ -36,16 +42,24 @@ angular
                 self.getBoard[i].status="England";
                 self.getBoard[i].status=="O"
                 self.getBoard.$save(i);
-                self.getBoard.$save(self.getTable[0]);
+                self.getTable.$save(self.getTable[0]);
             }
-
 
         }
 
+        function clearBoard() {
+            for (i = 0; i < 9; i++)
+                self.getBoard[i].status = "null";
+                self.getBoard.$save(i);
+        }
+
+        function clearGame() {
+            for(i = 0; i < 9; i++){
+                self.getBoard[i].status = "null";
+                self.getBoard.$save(i);
+                console.log(self.getBoard);
+            }
+        }
 
 
-
-    
-        
-
-                   }
+    }
