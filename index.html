@@ -43,7 +43,7 @@
 			     			O: box.status === 'England'}"
 			   
 			     ng-click="tictacCtrl.clickYou($index)"
-			     ng-repeat="box in tictacCtrl.board track by $index">
+			     ng-repeat="box in tictacCtrl.getBoard track by $index">
 			</div>		
 		</div>
 	</body>
