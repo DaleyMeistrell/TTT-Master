@@ -1,8 +1,9 @@
+
 body {
 	background-image: url("../images/rev1.jpg");
 }
 .boxes {
- 	height: 130px;
+ 	height: 98px;
  	width: 130px;
  	border: 1px solid white;
  	float: left;
@@ -63,11 +64,12 @@ body {
 }
 
 .X {
-	background-image: url("../images/flag1.png");
+	/*background-image: url("../images/usa1.gif");*/
+	background-image: url("../images/us.gif");
 	/*background-color: blue;*/
 }
 .O {
-	background-image: url("../images/flag2.png");
+	background-image: url("../images/ap.gif");
 	/*background-color: green;*/
 }
 .reset-button {
