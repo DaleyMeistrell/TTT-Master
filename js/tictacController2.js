@@ -66,10 +66,11 @@ angular
                 if (self.getBoard[0].status == "America"){
                     self.getTable[0].scoreAmerica++;
                     self.getTable.$save(self.getTable[0]);
+                    clearBoard();
                 } else if(self.getBoard[0].status == "England"){
                     self.getTable[0].scoreEngland++;
                     self.getTable.$save(self.getTable[0]);
-
+                    clearBoard();
                  }
                }
             else if((self.getBoard[3].status == self.getBoard[4].status) && 
@@ -81,10 +82,11 @@ angular
                 if (self.getBoard[3].status == "America"){
                     self.getTable[0].scoreAmerica++;
                     self.getTable.$save(self.getTable[0]);
+                    clearBoard();
                 } else if(self.getBoard[3].status == "England"){
                     self.getTable[0].scoreEngland++;
                     self.getTable.$save(self.getTable[0]);
-
+                    clearBoard();
                  }
                }
             else if((self.getBoard[6].status == self.getBoard[7].status) && 
@@ -96,10 +98,11 @@ angular
                 if (self.getBoard[6].status == "America"){
                     self.getTable[0].scoreAmerica++;
                     self.getTable.$save(self.getTable[0]);
+                    clearBoard();
                 } else if(self.getBoard[6].status == "England"){
                     self.getTable[0].scoreEngland++;
                     self.getTable.$save(self.getTable[0]);
-
+                    clearBoard();
                  }
                }
             else if((self.getBoard[0].status == self.getBoard[3].status) && 
@@ -111,10 +114,11 @@ angular
                 if (self.getBoard[0].status == "America"){
                     self.getTable[0].scoreAmerica++;
                     self.getTable.$save(self.getTable[0]);
+                    clearBoard();
                 } else if(self.getBoard[0].status == "England"){
                     self.getTable[0].scoreEngland++;
                     self.getTable.$save(self.getTable[0]);
-
+                    clearBoard();
                  }
                }
             else if((self.getBoard[1].status == self.getBoard[4].status) && 
@@ -126,9 +130,11 @@ angular
                 if (self.getBoard[1].status == "America"){
                     self.getTable[0].scoreAmerica++;
                     self.getTable.$save(self.getTable[0]);
+                    clearBoard();
                 } else if(self.getBoard[1].status == "England"){
                     self.getTable[0].scoreEngland++;
                     self.getTable.$save(self.getTable[0]);
+                    clearBoard();
                  }
                }
             else if((self.getBoard[2].status == self.getBoard[5].status) && 
@@ -140,9 +146,11 @@ angular
                 if (self.getBoard[2].status == "America"){
                     self.getTable[0].scoreAmerica++;
                     self.getTable.$save(self.getTable[0]);
+                    clearBoard();
                 } else if(self.getBoard[2].status == "England"){
                     self.getTable[0].scoreEngland++;
                     self.getTable.$save(self.getTable[0]);
+                    clearBoard();
                  }
                }
             else if((self.getBoard[0].status == self.getBoard[4].status) && 
@@ -154,9 +162,11 @@ angular
                 if (self.getBoard[0].status == "America"){
                     self.getTable[0].scoreAmerica++;
                     self.getTable.$save(self.getTable[0]);
+                    clearBoard();
                 } else if(self.getBoard[0].status == "England"){
                     self.getTable[0].scoreEngland++;
                     self.getTable.$save(self.getTable[0]);
+                    clearBoard();
                  }
                }
             else if((self.getBoard[2].status == self.getBoard[4].status) && 
@@ -168,9 +178,11 @@ angular
                 if (self.getBoard[2].status == "America"){
                     self.getTable[0].scoreAmerica++;
                     self.getTable.$save(self.getTable[0]);
+                    clearBoard();
                 } else if(self.getBoard[2].status == "England"){
                     self.getTable[0].scoreEngland++;
                     self.getTable.$save(self.getTable[0]);
+                    clearBoard();
                  }
                }
                // tie logic - if all boxes are null and
