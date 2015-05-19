@@ -6,6 +6,7 @@ angular
     TictacController.$inject = ['$firebaseArray'];
 
 
+    //adding functions to the controller
     function TictacController($firebaseArray){
         var self = this;
         self.getBoard = getBoard();
@@ -16,6 +17,7 @@ angular
         self.getWinner = getWinner;
         
 
+        // calling firebase objects
         function getBoard(){
             var ref = new Firebase("https://daleytictactoe.firebaseio.com/Board")
             var board = $firebaseArray(ref);
@@ -30,12 +32,18 @@ angular
         // self.board[$index].status output an X or O, blue or green.
         function clickYou(i){
             self.getTable[0].counter++
-            if (self.getTable[0].counter%2 ==0){
+            if(self.getBoard[i].status !== "null"){
+                // self.getTable[0].message = "Space is occupied";
+                alert("Sapce is occupied! Please choose another.")
+                self.getTable[0].counter++
+            }
+            else if (self.getTable[0].counter%2 ==0){
                 console.log("second if is running")
                 self.getBoard[i].status="England";
                 self.getBoard[i].status=="O"
                 self.getBoard.$save(i);
                 self.getTable.$save(self.getTable[0]);
+                
             } else {
                 console.log("first if is running")
                 self.getBoard[i].status="America";
@@ -45,6 +53,9 @@ angular
             }
             getWinner();
         }
+
+        // determine winner with logic, announce who wins, and
+        // increment score
         function getWinner(){
             if((self.getBoard[0].status == self.getBoard[1].status) && 
                (self.getBoard[1].status == self.getBoard[2].status) && 
@@ -162,6 +173,8 @@ angular
                     self.getTable.$save(self.getTable[0]);
                  }
                }
+               // tie logic - if all boxes are null and
+               // no one wins
                else if((self.getBoard[0].status != "null") &&
                 (self.getBoard[1].status != "null") &&
                 (self.getBoard[2].status != "null") &&
@@ -187,6 +200,18 @@ angular
                 // ((self.score1 = "") && (self.score2 = ""));
             }
         }
+
+        // function noClick() {
+        //     if (self.getBoard[0].status == "America"){
+        //         alert("Button already selected");
+        //         //     self.getTable[0].scoreAmerica++;
+        //         //     self.getTable.$save(self.getTable[0]);
+        //         // } else if(self.getBoard[0].status == "England"){
+        //         //     self.getTable[0].scoreEngland++;
+        //         //     self.getTable.$save(self.getTable[0]);
+
+        //          }
+        // }
         // clear all icons form the gameboard
         function clearBoard() {
             for (i = 0; i < 9; i++){

@@ -20,6 +20,7 @@
 		<h1 class="fancy">Tic<span class="font-black"> Tac</span><span class="redcoat-red"> Revolution</span></h1>
 		<h3><span class="patriots-blue">Patriots</span> <span class="font-black">vs</span> Redcoats</h3>
 
+
 		<div class="clearfix">
 			<div class="message">
 				<h2>{{ tictacCtrl.getTable[0].message }}</h2>
@@ -44,7 +45,11 @@
 			   
 			     ng-click="tictacCtrl.clickYou($index)"
 			     ng-repeat="box in tictacCtrl.getBoard track by $index">
-			</div>		
+			</div>	
+				<audio controls="audio" autoplay loop>
+				  <source src="images/star.mp3" type="audio/mpeg">
+				</audio>
 		</div>
+			
 	</body>
 </html>

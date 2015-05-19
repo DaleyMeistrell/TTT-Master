@@ -1,5 +1,6 @@
 body {
 	background-image: url("../images/rev1.jpg");
+	background-repeat: no-repeat;
 }
 .boxes {
  	height: 130px;
@@ -37,7 +38,7 @@ body {
 	left: 350px;
 }
 .reset-buttons {
-	bottom: 50px;
+	bottom: 25px;
 }
 .reset-buttons:before,
 .reset-buttons:after {
@@ -118,5 +119,10 @@ h4 {
 	margin: 15px auto;
 	color: blue;
 	/*float: left;*/
+}
+audio {
+	position: relative;
+	top: 20px;
+	left: 50px;
 }
 
